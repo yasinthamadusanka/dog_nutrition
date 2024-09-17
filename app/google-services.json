@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "280228167698",
+    "firebase_url": "https://dognutrition-1e3ff-default-rtdb.firebaseio.com",
+    "project_id": "dognutrition-1e3ff",
+    "storage_bucket": "dognutrition-1e3ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280228167698:android:f25c11da8ec6cf2d7698cb",
+        "android_client_info": {
+          "package_name": "com.example.dognutrition"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-4iqcjZYbk5EI5dGil60AunPpceKUY3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

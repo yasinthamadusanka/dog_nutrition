@@ -10,4 +10,6 @@
     <color name="textColorSecondary">#000000</color>
     <color name="backgroundColor">#F5F5F5</color>
     <color name="coral">#ff7f50</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#228b22</color>
 </resources>
