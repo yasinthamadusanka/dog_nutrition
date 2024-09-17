@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
 
-    private EditText username, email, password, confirmPassword,phone;
+    private EditText username, email, address, password, confirmPassword,phone;
     private Button btnRegister;
     private TextView signInText;
 
@@ -46,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.loginButton);
         ImageView passwordToggle = findViewById(R.id.password_toggle);
         signInText = findViewById(R.id.signInText);
+        address = findViewById(R.id.address);
 
         passwordToggle.setOnClickListener(v -> {
             if (password.getInputType() == (android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
@@ -73,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
         String pass = password.getText().toString().trim();
         String cPass = confirmPassword.getText().toString().trim();
         String uPhone = phone.getText().toString().trim();
+        String uAddress = address.getText().toString().trim();
 
         if (TextUtils.isEmpty(uName)) {
             username.setError("Username is required");
@@ -86,6 +88,12 @@ public class RegisterActivity extends AppCompatActivity {
             phone.setError("Enter a valid phone number");
             return;
         }
+
+        if (TextUtils.isEmpty(uAddress)) {
+            address.setError("Address is required");
+            return;
+        }
+
         if (TextUtils.isEmpty(pass) || pass.length() < 6) {
             password.setError("Password must be at least 6 characters");
             return;
@@ -107,6 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
                             userData.put("userName", uName);
                             userData.put("email", uEmail);
                             userData.put("phoneNumber", uPhone);
+                            userData.put("address",uAddress);
 
                             databaseReference.child(userId).setValue(userData)
                                     .addOnSuccessListener(aVoid -> {
