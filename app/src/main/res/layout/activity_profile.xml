@@ -257,7 +257,7 @@
                             android:layout_weight="1"
                             android:text="Change"
                             android:textAlignment="textEnd"
-                            android:textColor="#5b5b5b"
+                            android:textColor="#32cd32"
                             android:textSize="16sp" />
 
                     </LinearLayout>

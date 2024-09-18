@@ -111,25 +111,21 @@ public class RegisterActivity extends AppCompatActivity {
                         if (user != null) {
                             String userId = user.getUid();
 
-                            Map<String, Object> userData = new HashMap<>();
-                            userData.put("userName", uName);
-                            userData.put("email", uEmail);
-                            userData.put("phoneNumber", uPhone);
-                            userData.put("address",uAddress);
+                            UserProfile newUser = new UserProfile(uName, uEmail, uPhone, uAddress);
 
-                            databaseReference.child(userId).setValue(userData)
+                            databaseReference.child(userId).setValue(newUser)
                                     .addOnSuccessListener(aVoid -> {
-                                        Toast.makeText(RegisterActivity.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(this, "User registered successfully!", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                         startActivity(intent);
                                         finish();
                                     })
                                     .addOnFailureListener(e -> {
-                                        Toast.makeText(RegisterActivity.this, "Failed to add user data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(this, "Failed to add user data: " + e.getMessage(), Toast.LENGTH_LONG).show();
                                     });
                         }
                     } else {
-                        Toast.makeText(RegisterActivity.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
     }

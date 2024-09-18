@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         }
                     } else {
-                        Snackbar.make(rootView, "Credentials are incorrect: ", Snackbar.LENGTH_SHORT)
+                        Snackbar.make(rootView, "Credentials are incorrect: ", Snackbar.LENGTH_LONG)
                                 .setBackgroundTint(ContextCompat.getColor(this, R.color.red))
                                 .show();
                     }
