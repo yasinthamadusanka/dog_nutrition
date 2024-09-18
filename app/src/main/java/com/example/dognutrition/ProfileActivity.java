@@ -31,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private TextView textViewUsername1, textViewUsername2, textViewEmail1, textViewEmail2, textViewAddress, textViewPhoneNumber, textViewChange;
     private Button editProfileButton;
-    private ImageView imageView;
+    private ImageView imageView, imageView2;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -50,6 +50,15 @@ public class ProfileActivity extends AppCompatActivity {
         editProfileButton = findViewById(R.id.edit_btn);
         imageView = findViewById(R.id.imageView5);
         textViewChange = findViewById(R.id.textView21);
+        imageView2 = findViewById(R.id.imageView9);
+
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, PaymentMethodActivity.class);
+                startActivity(intent);
+            }
+        });
 
         textViewChange.setOnClickListener(new View.OnClickListener() {
             @Override
