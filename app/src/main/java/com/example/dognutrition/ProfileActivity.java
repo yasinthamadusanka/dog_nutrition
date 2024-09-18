@@ -1,80 +1,67 @@
 package com.example.dognutrition;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private EditText editTextName, editTextAddress, editTextPayment;
-    private Button buttonSave;
-    private FirebaseAuth mAuth;
-    private DatabaseReference databaseReference;
+    private TextView textViewUsername1, textViewUsername2, textViewEmail1, textViewEmail2, textViewAddress, textViewPhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-//        editTextName = findViewById(R.id.edit);
-//        editTextAddress = findViewById(R.id.editTextAddress);
-//        editTextPayment = findViewById(R.id.editTextPayment);
-//        buttonSave = findViewById(R.id.buttonSave);
-//
-//        mAuth = FirebaseAuth.getInstance();
-//        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-//
-//        buttonSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                saveUserProfile();
-//            }
-//        });
-//
-//        // Load existing user profile information if needed
-//        loadUserProfile();
+        textViewUsername1 = findViewById(R.id.textView);
+        textViewUsername2 = findViewById(R.id.textView23);
+        textViewEmail1 = findViewById(R.id.textView2);
+        textViewEmail2 = findViewById(R.id.textView25);
+        textViewAddress = findViewById(R.id.textView28);
+        textViewPhoneNumber = findViewById(R.id.textView27);
+
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        fetchUserData(userId);
     }
 
-//    private void saveUserProfile() {
-//        String userId = mAuth.getCurrentUser().getUid();
-//        String name = editTextName.getText().toString().trim();
-//        String address = editTextAddress.getText().toString().trim();
-//        String paymentMethod = editTextPayment.getText().toString().trim();
-//
-//        if (name.isEmpty() || address.isEmpty() || paymentMethod.isEmpty()) {
-//            Toast.makeText(ProfileActivity.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//
-//        UserProfile userProfile = new UserProfile(name, address, paymentMethod);
-//        databaseReference.child(userId).setValue(userProfile).addOnCompleteListener(task -> {
-//            if (task.isSuccessful()) {
-//                Toast.makeText(ProfileActivity.this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
-//            } else {
-//                Toast.makeText(ProfileActivity.this, "Profile update failed", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
+    private void fetchUserData(String userId) {
+        // Get reference to Firebase database
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users").child(userId);
 
-//    private void loadUserProfile() {
-//        String userId = mAuth.getCurrentUser().getUid();
-//        databaseReference.child(userId).get().addOnCompleteListener(task -> {
-//            if (task.isSuccessful()) {
-//                UserProfile userProfile = task.getResult().getValue(UserProfile.class);
-//                if (userProfile != null) {
-//                    editTextName.setText(userProfile.getName());
-//                    editTextAddress.setText(userProfile.getAddress());
-//                    editTextPayment.setText(userProfile.getPaymentMethod());
-//                }
-//            }
-//        });
-//    }
+        // Read data from Firebase
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Extract data from the snapshot
+                String username = dataSnapshot.child("userName").getValue(String.class);
+                String email = dataSnapshot.child("email").getValue(String.class);
+                String address = dataSnapshot.child("address").getValue(String.class);
+                String phoneNumber = dataSnapshot.child("phoneNumber").getValue(String.class);
+
+                // Set the data to the TextViews
+                textViewUsername1.setText(username);
+                textViewUsername2.setText(username);
+                textViewEmail1.setText(email);
+                textViewEmail2.setText(email);
+                textViewAddress.setText(address);
+                textViewPhoneNumber.setText(phoneNumber);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ProfileActivity.this, "Failed to load data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

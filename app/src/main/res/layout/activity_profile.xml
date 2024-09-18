@@ -57,15 +57,17 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Customer Name"
+                    android:layout_marginStart="133dp"
+                    android:layout_marginTop="196dp"
+                    android:layout_marginEnd="131dp"
+                    android:text="Customer"
                     android:textColor="#ffffff"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView5"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/imageView5"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintHorizontal_bias="0.482"
+                    app:layout_constraintStart_toStartOf="@+id/view"
+                    app:layout_constraintTop_toTopOf="@+id/view" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -386,21 +388,22 @@
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:text="Address"
                             android:textColor="#cc5500"
                             android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/textView28"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
                             android:layout_weight="1"
+                            android:ellipsize="none"
+                            android:paddingBottom="2dp"
+                            android:singleLine="false"
                             android:text="address"
-                            android:textAlignment="textEnd"
                             android:textColor="#5b5b5b"
-                            android:textSize="16sp" />
-
+                            android:textSize="14sp" />
                     </LinearLayout>
 
 
