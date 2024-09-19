@@ -77,8 +77,6 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
 

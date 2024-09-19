@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">Dog Nutrition</string>
+
+    <string name="essential_dog_food_ingredients_title">Essential Dog Food Ingredients for Healthy Dogs</string>
+    <string name="essential_dog_food_ingredients_content">
+        You are what you eat. We understand that to be fit and healthy, we need to eat quality food. The same rule goes for our dogs.\n\n
+        Although they may be less discriminating than we are in their choice of what they gobble up, it’s a dog owner’s responsibility to make sure our dogs get a nutritionally balanced diet tailored to meet their needs. “Using appropriate feeding practices is one of the most important components of maintaining companion animal health,” reports the Merck Veterinary Manual.\n\n
+        Research has proven, and your veterinarian will tell you, that a healthy, well-balanced diet for your dog must include whole-food ingredients that provide the following: protein, fats and fatty acids, carbohydrates, fiber, vitamins, minerals, and water.\n\n
+        Whole-food ingredients are minimally processed so they deliver the nutrients, vitamins, and fiber that pack the most value. The best diet for your dog is composed of whole-food ingredients – including fresh and raw meats, fruits, and vegetables — as opposed to powdered or synthetic ingredients.
+    </string>
+
+    <string name="choose_best_dog_food_title">How to Choose the Best Dog Food</string>
+    <string name="choose_best_dog_food_content">
+        In an ideal world, all dog food would be created equal. Instead, dog owners are presented with an overwhelming array of options, all claiming to be the best dog food on the market. Wading through these choices to find a dog food brand that is healthy, affordable, and appealing to your pet is often frustrating. We’ve compiled expert advice to help you narrow down your options.\n\n
+        Most people feed their dogs dry kibble or canned wet food. These processed foods might not be appealing to us, but they contain all of the nutrients dogs need to stay healthy. Quality commercial dog foods are highly regulated and have undergone rigorous testing by veterinary specialists. So what exactly is in these dog foods?\n\n
+        Dogs, unlike cats, aren’t strict carnivores. While meat makes up the majority of their diet, domestic dogs can also derive nutrients from grains, fruits, and vegetables. These non-meat foods aren’t simply fillers, but can be a valuable source of essential vitamins, minerals, and fiber. A good dog food will contain meat, vegetables, grains, and fruits. The best dog foods contain high-quality versions of these ingredients that are appropriate for your dog’s digestive system.
+    </string>
+
+    <string name="how_to_tell_if_underweight_title">How to Tell if Your Dog is Underweight</string>
+    <string name="how_to_tell_if_underweight_content">
+        Obesity in dogs is so common that owners may not recognize when their pet is overweight. Often, a healthy dog should be much leaner than many people think. But how do you know if your dog is too lean?\n\n
+        Maintaining your dog’s ideal weight and feeding them the appropriate nutrients and calories is essential to your dog’s health. We investigate how to know if your dog might be underweight and, if so, what you can do about it. A dog who looks too thin is often actually in their ideal body condition. Dogs should have a defined waist when viewed from above and an abdomen that tucks up when viewed from the side. In addition, you should easily be able to feel a dog’s ribs when you run your hands down their sides. But can a dog’s waist be too defined, their abdomen too tucked, and their ribs too obvious? Absolutely.\n\n
+        It’s important to recognize when your dog is under their ideal weight, as that can indicate an improper diet or other problems. Dr. Jerry Klein, Chief Veterinarian for the AKC, points out that although dog obesity is a far more common concern than underweight dogs, “If a dog is underweight, it should be examined by a veterinarian to make sure there are no underlying medical issues.”
+    </string>
+
+    <string name="healthy_dry_dog_food_title">How to Choose Healthy Dry Dog Food</string>
+    <string name="healthy_dry_dog_food_content">
+        You’re in the dog food aisle, looking for a healthy option. At first glance, brightly colored bags have words that seem to shout “BEEF” and “CHICKEN.” But after closely reading the label, you’re confronted with the names of ingredients you can’t even pronounce. What’s more, meat isn’t even the first ingredient (or the second, or the third).<br/><br/>
+        If this sounds familiar, you’re not alone. Choosing the healthiest dry dog food can be challenging, especially if you’re unsure about your dog’s nutritional requirements. By understanding your dog’s breed, size, and energy level, you can select a dry dog food that meets their needs.\n\n In the long run, this can promote their health, weight, and quality of life.<br/><br/>
+        For kibble to be considered “complete and balanced,” it must meet nutritional standards set by the Association of American Feed Control Officials (AAFCO). These standards work to ensure that pet food contains ingredients that benefit animals’ health and are portioned appropriately.<br/><br/>
+        Open Farm does more than meet these standards; it exceeds them. Each dog food label tells a story when it comes to disclosing the ingredients in every recipe.
+    </string>
+
+    <string name="finding_right_dog_bowl_title">Finding the Right Dog Bowl for Your Dog</string>
+    <string name="finding_right_dog_bowl_content">
+        Looking for the right bowl for your dog can feel overwhelming with all the options available to choose from. Every dog needs a food and water bowl, but how do you choose the right one for your dog?<br/><br/>
+        Different dog bowls benefit different sized and aged dogs. Choosing the right dog bowl for your dog is based on a few different factors, but some of the most common kinds include standard, elevated, and travel bowls, slow and puzzle feeders, and timed dog feeders.<br/><br/>
+        The most common way to feed dogs is with a standard dog bowl. These bowls come in a variety of sizes and colors and are made with a variety of materials. Standard dog bowls are often the fastest and easiest way to provide dogs with food and water when you’re at home.\n\n<br/><br/>
+        As the name implies, these dog bowls are raised off the floor. Many large and giant breed dog owners will purchase elevated dog bowls because they think a dog bending over is uncomfortable. However, some studies have shown that elevated dog bowls can lead to an increased risk of bloat, a serious condition that can be fatal. If your dog has health conditions that you think would benefit from an elevated dog bowl, speak with your dog’s veterinarian about what is best for your dog.
+    </string>
 </resources>

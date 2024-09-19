@@ -15,6 +15,11 @@
         android:theme="@style/Theme.DogNutrition"
         tools:targetApi="31">
         <activity
+            android:name=".ArticleDetailActivity"
+            android:exported="false"
+            android:label="back to articles"
+            android:theme="@style/ShowDetailsTheme" />
+        <activity
             android:name=".ArticleActivity"
             android:exported="false" />
         <activity
@@ -23,16 +28,16 @@
         <activity
             android:name=".ShowDetailsActivity"
             android:exported="false"
-            android:theme="@style/ShowDetailsTheme"
-            android:label="back to home"/>
+            android:label="back to home"
+            android:theme="@style/ShowDetailsTheme" />
         <activity
             android:name=".PaymentMethodActivity"
             android:exported="false" />
         <activity
             android:name=".EditProfileActivity"
             android:exported="false"
-            android:theme="@style/ShowDetailsTheme2"
-            android:label="back to profile"/>
+            android:label="back to profile"
+            android:theme="@style/ShowDetailsTheme2" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -42,8 +47,8 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="false"
-            android:theme="@style/ShowDetailsTheme2"
-            android:label="back to home"/>
+            android:label="back to home"
+            android:theme="@style/ShowDetailsTheme2" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
