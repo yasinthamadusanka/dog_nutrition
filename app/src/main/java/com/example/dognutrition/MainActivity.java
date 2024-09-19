@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private void bottomNavigation(){
         FloatingActionButton floatingActionButton = findViewById(R.id.floatingBtn);
-        LinearLayout homeBtn = findViewById(R.id.linearBtn);
+        ImageView homeBtn = findViewById(R.id.homeBtn);
+        ImageView profileBtn = findViewById(R.id.profileBtn);
+        ImageView educationBtn = findViewById(R.id.educationBtn);
+        ImageView settingsBtn = findViewById(R.id.settingsBtn);
+
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +53,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
             }
         });
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            }
+        });
+        educationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ArticleActivity.class));
+            }
+        });
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
 
     }
 

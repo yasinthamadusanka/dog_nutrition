@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -37,7 +38,11 @@ public class CartActivity extends AppCompatActivity {
 
     private void bottomNavigation(){
         FloatingActionButton floatingActionButton = findViewById(R.id.floatingBtn);
-        LinearLayout homeBtn = findViewById(R.id.linearBtn);
+        ImageView homeBtn = findViewById(R.id.homeBtn);
+        ImageView profileBtn = findViewById(R.id.profileBtn);
+        ImageView educationBtn = findViewById(R.id.educationBtn);
+        ImageView settingsBtn = findViewById(R.id.settingsBtn);
+
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +57,27 @@ public class CartActivity extends AppCompatActivity {
                 startActivity(new Intent(CartActivity.this, MainActivity.class));
             }
         });
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, ProfileActivity.class));
+            }
+        });
+        educationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, ArticleActivity.class));
+            }
+        });
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
 
     }
 

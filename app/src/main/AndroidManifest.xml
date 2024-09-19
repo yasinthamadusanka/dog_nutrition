@@ -15,12 +15,16 @@
         android:theme="@style/Theme.DogNutrition"
         tools:targetApi="31">
         <activity
+            android:name=".ArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".CartActivity"
             android:exported="false" />
         <activity
             android:name=".ShowDetailsActivity"
             android:exported="false"
-            android:theme="@style/ShowDetailsTheme" />
+            android:theme="@style/ShowDetailsTheme"
+            android:label="back to home"/>
         <activity
             android:name=".PaymentMethodActivity"
             android:exported="false" />
@@ -28,16 +32,18 @@
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/ShowDetailsTheme2"
+            android:label="back to home"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
