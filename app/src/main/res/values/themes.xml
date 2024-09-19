@@ -3,6 +3,7 @@
     <style name="Base.Theme.DogNutrition" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">#f94d00</item>
     </style>
 
     <style name="Theme.DogNutrition" parent="Base.Theme.DogNutrition" />
@@ -11,5 +12,6 @@
         <item name="colorPrimary">#ffa089</item>
         <item name="android:textColorPrimary">#FFFFFF</item>
         <item name="colorControlNormal">#FFFFFF</item>
+        <item name="android:statusBarColor">#f94d00</item>
     </style>
 </resources>

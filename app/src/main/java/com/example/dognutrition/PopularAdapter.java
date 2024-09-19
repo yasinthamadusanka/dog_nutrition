@@ -32,7 +32,6 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         holder.title.setText(populars.get(position).getTitle());
         holder.fee.setText(String.valueOf(populars.get(position).getFee()));
 
-
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(populars.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
@@ -42,9 +41,12 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         holder.addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
-                intent.putExtra("popular", populars.get(position));
-                holder.itemView.getContext().startActivity(intent);
+                int currentPosition = holder.getAdapterPosition(); // Fetch the position dynamically
+                if (currentPosition != RecyclerView.NO_POSITION) { // Ensure position is valid
+                    Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
+                    intent.putExtra("popular", populars.get(currentPosition)); // Use current position
+                    holder.itemView.getContext().startActivity(intent);
+                }
             }
         });
     }
