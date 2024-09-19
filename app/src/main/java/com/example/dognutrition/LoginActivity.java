@@ -88,9 +88,11 @@ public class LoginActivity extends AppCompatActivity {
                             Snackbar.make(rootView, "Login successful!", Snackbar.LENGTH_LONG)
                                     .setBackgroundTint(ContextCompat.getColor(this, R.color.green))
                                     .show();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            finish();
+                            new android.os.Handler().postDelayed(() -> {
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }, 500);
                         }
                     } else {
                         Snackbar.make(rootView, "Credentials are incorrect: ", Snackbar.LENGTH_LONG)
