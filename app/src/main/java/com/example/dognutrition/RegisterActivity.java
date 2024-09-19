@@ -119,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                             databaseReference.child(userId).setValue(newUser)
                                     .addOnSuccessListener(aVoid -> {
                                         View rootView = findViewById(android.R.id.content);
-                                        Snackbar.make(rootView, "User registered successfully!", Snackbar.LENGTH_LONG)
+                                        Snackbar.make(rootView, "User registered successfully", Snackbar.LENGTH_LONG)
                                                 .setBackgroundTint(ContextCompat.getColor(this, R.color.green))
                                                 .show();
                                         new android.os.Handler().postDelayed(() -> {
@@ -138,7 +138,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     } else {
                         View rootView = findViewById(android.R.id.content);
-                        Snackbar.make(rootView, "Already Registered", Snackbar.LENGTH_LONG)
+                        Snackbar.make(rootView, "Already registered", Snackbar.LENGTH_LONG)
                                 .setBackgroundTint(ContextCompat.getColor(this, R.color.red))
                                 .show();
                     }

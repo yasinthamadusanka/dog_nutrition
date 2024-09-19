@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
-                            Snackbar.make(rootView, "Login successful!", Snackbar.LENGTH_LONG)
+                            Snackbar.make(rootView, "Login Successfully", Snackbar.LENGTH_LONG)
                                     .setBackgroundTint(ContextCompat.getColor(this, R.color.green))
                                     .show();
                             new android.os.Handler().postDelayed(() -> {
@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                             }, 500);
                         }
                     } else {
-                        Snackbar.make(rootView, "Credentials are incorrect: ", Snackbar.LENGTH_LONG)
+                        Snackbar.make(rootView, "Credentials are incorrect", Snackbar.LENGTH_LONG)
                                 .setBackgroundTint(ContextCompat.getColor(this, R.color.red))
                                 .show();
                     }

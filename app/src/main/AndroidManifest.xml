@@ -30,7 +30,9 @@
             android:exported="false" />
         <activity
             android:name=".EditProfileActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/ShowDetailsTheme2"
+            android:label="back to profile"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

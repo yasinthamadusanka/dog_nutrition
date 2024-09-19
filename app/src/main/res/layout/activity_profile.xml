@@ -400,7 +400,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_weight="1"
                             android:ellipsize="none"
-                            android:paddingBottom="2dp"
+                            android:paddingBottom="4dp"
                             android:singleLine="false"
                             android:text="address"
                             android:textColor="#5b5b5b"

@@ -21,4 +21,5 @@
         <item name="colorControlNormal">#FFFFFF</item>
         <item name="android:statusBarColor">#f94d00</item>
     </style>
+
 </resources>

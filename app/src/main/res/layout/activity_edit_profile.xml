@@ -55,9 +55,15 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="8dp"
-        android:textColor="@color/black"
+        android:textColor="#838996"
         android:textColorHighlight="@color/cardview_dark_background"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:longClickable="false"
+        android:cursorVisible="false"
+        android:importantForAccessibility="yes"
+        android:contentDescription="Email address"/>
 
     <EditText
         android:layout_width="match_parent"
