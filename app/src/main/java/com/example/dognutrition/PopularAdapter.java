@@ -1,5 +1,6 @@
 package com.example.dognutrition;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,8 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -32,9 +31,6 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     public void onBindViewHolder(@NonNull PopularAdapter.ViewHolder holder, int position) {
         holder.title.setText(populars.get(position).getTitle());
         holder.fee.setText(String.valueOf(populars.get(position).getFee()));
-        holder.title.setText(populars.get(position).getTitle());
-        holder.title.setText(populars.get(position).getTitle());
-
 
 
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(populars.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
@@ -42,6 +38,15 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.pic);
+
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
+                intent.putExtra("popular", populars.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -58,7 +63,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             super(itemView);
             title = itemView.findViewById(R.id.title);
             fee = itemView.findViewById(R.id.fee);
-            pic = itemView.findViewById(R.id.pic);
+            pic = itemView.findViewById(R.id.picFood);
             addBtn = itemView.findViewById(R.id.addBtn);
 
 

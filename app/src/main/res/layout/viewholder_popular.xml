@@ -9,7 +9,7 @@
     android:elevation="3dp">
 
     <ImageView
-        android:id="@+id/pic"
+        android:id="@+id/picFood"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
@@ -41,9 +41,9 @@
         android:textColor="#522d80"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/pic"
-        app:layout_constraintStart_toStartOf="@+id/pic"
-        app:layout_constraintTop_toBottomOf="@+id/pic" />
+        app:layout_constraintEnd_toEndOf="@+id/picFood"
+        app:layout_constraintStart_toStartOf="@+id/picFood"
+        app:layout_constraintTop_toBottomOf="@+id/picFood" />
 
     <TextView
         android:id="@+id/textView16"
@@ -55,7 +55,7 @@
         android:textColor="#ff4500"
         app:layout_constraintBottom_toBottomOf="@+id/fee"
         app:layout_constraintEnd_toStartOf="@+id/fee"
-        app:layout_constraintTop_toBottomOf="@+id/pic" />
+        app:layout_constraintTop_toBottomOf="@+id/picFood" />
 
     <TextView
         android:id="@+id/addBtn"
@@ -71,7 +71,7 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/pic"
-        app:layout_constraintStart_toStartOf="@+id/pic"
+        app:layout_constraintEnd_toEndOf="@+id/picFood"
+        app:layout_constraintStart_toStartOf="@+id/picFood"
         app:layout_constraintTop_toBottomOf="@+id/fee" />
 </androidx.constraintlayout.widget.ConstraintLayout>

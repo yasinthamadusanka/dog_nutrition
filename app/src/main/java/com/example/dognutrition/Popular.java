@@ -1,6 +1,8 @@
 package com.example.dognutrition;
 
-public class Popular {
+import java.io.Serializable;
+
+public class Popular implements Serializable {
     private String title;
     private String pic;
     private String description;
