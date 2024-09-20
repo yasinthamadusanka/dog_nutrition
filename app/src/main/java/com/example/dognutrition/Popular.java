@@ -8,6 +8,19 @@ public class Popular implements Serializable {
     private String description;
     private Double fee;
     private int numberInCart;
+    private Double rating;
+
+    public Popular(double rating) {
+        this.rating = rating;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 
     public Popular(String title, String pic, String description, Double fee) {
         this.title = title;
@@ -16,12 +29,12 @@ public class Popular implements Serializable {
         this.fee = fee;
     }
 
-    public Popular(String title, String pic, String description, Double fee, int numberInCart) {
+    public Popular(String title, String pic, String description, Double fee, Double rating) {
         this.title = title;
         this.pic = pic;
         this.description = description;
         this.fee = fee;
-        this.numberInCart = numberInCart;
+        this.rating = rating;
     }
 
     public String getTitle() {

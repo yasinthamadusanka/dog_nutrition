@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         holder.titleTv.setText(currentItem.getTitle());
         holder.priceTv.setText(String.valueOf(currentItem.getFee()));
         holder.descriptionTv.setText(currentItem.getDescription());
+        holder.ratingBar.setRating((float) currentItem.getRating());
 
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(mList.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
@@ -66,6 +68,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         TextView titleTv, priceTv, descriptionTv;
         AppCompatRatingBar ratingTv;
         TextView addBtnTv;
+        RatingBar ratingBar;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -75,6 +78,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             descriptionTv = itemView.findViewById(R.id.descriptionSearch);
             addBtnTv = itemView.findViewById(R.id.addBtnSearch);
             priceTv = itemView.findViewById(R.id.feeSearch);
+            ratingBar = itemView.findViewById(R.id.ratingBarSearch);
         }
     }
 
@@ -83,10 +87,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         this.mList = filteredList;
         notifyDataSetChanged();
     }
-
-
-
-
 
 
 }
