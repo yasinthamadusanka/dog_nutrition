@@ -32,7 +32,7 @@
             android:name=".SearchViewActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".CartActivity"
             android:exported="false" />
         <activity
             android:name=".ShowDetailsActivity"
@@ -59,7 +59,7 @@
             android:label="back to home"
             android:theme="@style/ShowDetailsTheme2" />
         <activity
-            android:name=".CartActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

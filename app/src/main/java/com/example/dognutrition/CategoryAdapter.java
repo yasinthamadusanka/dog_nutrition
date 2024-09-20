@@ -1,5 +1,7 @@
 package com.example.dognutrition;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +19,11 @@ import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
     ArrayList<Category> categories;
+    Context context;
 
-    public CategoryAdapter(ArrayList<Category> categories) {
+    public CategoryAdapter(ArrayList<Category> categories, Context context) {
         this.categories = categories;
+        this.context = context;
     }
 
     @Override
@@ -65,6 +69,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.categoryPic);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start MyHobbyActivity
+                Intent intent = new Intent(context, SearchViewActivity.class);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -76,6 +90,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         TextView categoryName;
         ImageView categoryPic;
         ConstraintLayout mainLayout;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
