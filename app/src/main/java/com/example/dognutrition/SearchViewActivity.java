@@ -34,8 +34,61 @@ public class SearchViewActivity extends AppCompatActivity {
         searchView = findViewById(R.id.searchView);
 
         arrname = new String[]{
-
+                "Royal",
+                "Hill",
+                "Buffalo",
+                "Purina",
+                "Wellness",
+                "Merrick",
+                "Nature",
+                "Taste",
+                "Orijen",
+                "Acana",
+                "Greenies",
+                "Nylabone",
+                "Vita",
+                "Ollie",
+                "Honest",
+                "Zuke",
+                "Canidae",
+                "Solid",
+                "Purina",
+                "Merrick",
+                "Eukanuba",
+                "Wellness",
+                "Rachael",
+                "Victor",
+                "Canidae"
         };
+
+        arrimg = new int[]{
+                R.drawable.pic1,
+                R.drawable.pic2,
+                R.drawable.pic3,
+                R.drawable.pic4,
+                R.drawable.pic5,
+                R.drawable.pic6,
+                R.drawable.pic7,
+                R.drawable.pic8,
+                R.drawable.pic9,
+                R.drawable.pic10,
+                R.drawable.pic11,
+                R.drawable.pic12,
+                R.drawable.pic13,
+                R.drawable.pic14,
+                R.drawable.pic15,
+                R.drawable.pic16,
+                R.drawable.pic17,
+                R.drawable.pic18,
+                R.drawable.pic19,
+                R.drawable.pic20,
+                R.drawable.pic21,
+                R.drawable.pic22,
+                R.drawable.pic23,
+                R.drawable.pic24,
+                R.drawable.pic25
+        };
+
 
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -127,7 +180,7 @@ public class SearchViewActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        ArrayList<Popular> mList = new ArrayList<>();
+        mList = new ArrayList<>();
         mList.add(new Popular("Royal Canin","pic1","Tailored nutrition for different dog sizes (small, medium, large)",90.0));
         mList.add(new Popular("Hill's Science Diet","pic2","Available in chicken and barley or lamb and rice, formulated for adults",70.0));
         mList.add(new Popular("Blue Buffalo","pic3","Includes real meat as the first ingredient, with whole grains and garden",80.0));

@@ -81,7 +81,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView6"
-                    tools:drawablePadding="20dp" />
+                    tools:drawablePadding="20dp"
+                    android:focusable="false"
+                    android:clickable="true"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
