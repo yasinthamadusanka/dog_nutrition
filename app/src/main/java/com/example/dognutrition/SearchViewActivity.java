@@ -23,6 +23,8 @@ public class SearchViewActivity extends AppCompatActivity {
     private SearchView searchView;
     private ArrayList<Popular> mList;
     private SearchAdapter adapter;
+    String[] arrname;
+    int[] arrimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,10 @@ public class SearchViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_view);
 
         searchView = findViewById(R.id.searchView);
+
+        arrname = new String[]{
+
+        };
 
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -128,6 +134,27 @@ public class SearchViewActivity extends AppCompatActivity {
         mList.add(new Popular("Purina","pic4","Contains live probiotics for digestive health, high in protein",70.0));
         mList.add(new Popular("Wellness","pic5","High protein, grain-free formula with deboned turkey and chicken",90.0));
         mList.add(new Popular("Merrick","pic6","High-protein, grain-free formula with real beef as the first ingredient",100.0));
+        mList.add(new Popular("Nature's Logic","pic7"," Natural, whole-food ingredients with no synthetic vitamins or minerals",85.0));
+        mList.add(new Popular("Taste of the Wild","pic8","Grain-free, with roasted bison and roasted roasted roasted beef",85.0));
+        mList.add(new Popular("Orijen","pic9","Biologically appropriate food with fresh, regional ingredients",120.0));
+        mList.add(new Popular("Acana","pic10","Limited ingredient diets with single animal protein sources and wholesome grains.",110.0));
+        mList.add(new Popular("Greenies","pic11","Helps clean teeth and freshen breath",25.0));
+        mList.add(new Popular("Nylabone","pic12","Durable chew toy designed for heavy chewers",20.0));
+        mList.add(new Popular("Vita Bone","pic13","Various flavors with added vitamins and minerals",15.0));
+        mList.add(new Popular("Ollie","pic14","Customized meal plans delivered fresh to your door",10.0));
+        mList.add(new Popular("The Honest Kitchen","pic15","Human-grade ingredients with minimal processing",110.0));
+        mList.add(new Popular("Zuke's","pic16","Soft, moist treats ideal for training",15.0));
+        mList.add(new Popular("Canidae","pic17","Limited ingredient diet with fresh meat, whole foods, and 8 key ingredients.",85.0));
+        mList.add(new Popular("Solid Gold","pic18","Grain and gluten-free with high-quality protein like chicken and vegetables",45.0));
+        mList.add(new Popular("Purina","pic19","Natural, grain-free formula with high-quality protein sources",70.0));
+        mList.add(new Popular("Merrick","pic20","High-protein, grain-free kibble mixed with freeze-dried raw pieces",100.0));
+        mList.add(new Popular("Eukanuba","pic21","Balanced nutrition with high-quality proteins and prebiotics",80.0));
+        mList.add(new Popular("Wellness","pic22","Limited ingredient diet for dogs with food sensitivities",85.0));
+        mList.add(new Popular("Rachael Ray Nutrish","pic23","Grain-free with real turkey or chicken as the first ingredient",70.0));
+        mList.add(new Popular("Victor","pic24","High-protein, multi-meat formula suitable for active and working dogs",90.0));
+        mList.add(new Popular("Canidae","pic25"," Limited ingredient treats with high-quality proteins and no fillers",20.0));
+
+
 
         adapter = new SearchAdapter(mList);
         recyclerView.setAdapter(adapter);
