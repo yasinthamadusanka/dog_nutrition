@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/card_background"
+    android:elevation="3dp">
+
+    <ImageView
+        android:id="@+id/picFoodSearch"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/textContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleSearch"
+        app:srcCompat="@drawable/pic1" />
+
+    <TextView
+        android:id="@+id/titleSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:text="title"
+        android:textColor="#522d80"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textContainer"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/feeSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textColor="#522d80"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/picFoodSearch"
+        app:layout_constraintStart_toStartOf="@+id/picFoodSearch"
+        app:layout_constraintTop_toBottomOf="@+id/picFoodSearch" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="3dp"
+        android:text="$"
+        android:textColor="#ff4500"
+        app:layout_constraintBottom_toBottomOf="@+id/feeSearch"
+        app:layout_constraintEnd_toStartOf="@+id/feeSearch"
+        app:layout_constraintTop_toBottomOf="@+id/picFoodSearch" />
+
+
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/picFoodSearch"
+        app:layout_constraintTop_toTopOf="@+id/picFoodSearch">
+
+        <TextView
+            android:id="@+id/descriptionSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textColor="#000000"
+            android:layout_marginBottom="4dp"
+            android:justificationMode="inter_word"
+            />
+
+        <RatingBar
+            android:id="@+id/ratingBarSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:numStars="5"
+            android:rating="4.5"
+            android:stepSize="0.1"
+            android:isIndicator="true"
+            android:layout_marginBottom="4dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:progressTint="#f94d00 "
+            android:backgroundTint="#a9a9a9"/>
+
+        <TextView
+            android:id="@+id/addBtnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/background_btn"
+            android:paddingStart="10dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="3dp"
+            android:text="+Add"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/picFood"
+            app:layout_constraintStart_toStartOf="@+id/picFood"
+            app:layout_constraintTop_toBottomOf="@+id/fee" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -38,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
         ImageView profileBtn = findViewById(R.id.profileBtn);
         ImageView educationBtn = findViewById(R.id.educationBtn);
         ImageView settingsBtn = findViewById(R.id.settingsBtn);
+        EditText searchView = findViewById(R.id.searchView);
+
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SearchViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {

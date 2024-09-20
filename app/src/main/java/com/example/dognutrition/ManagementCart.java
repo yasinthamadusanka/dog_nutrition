@@ -59,6 +59,7 @@ public class ManagementCart {
             fee = fee + (listFood.get(i).getFee() * listFood.get(i).getNumberInCart());
         }
         return  fee;
+
     }
 }
 

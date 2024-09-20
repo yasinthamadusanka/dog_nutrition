@@ -22,8 +22,17 @@
         <activity
             android:name=".ArticleActivity"
             android:exported="false" />
+
         <activity
-            android:name=".CartActivity"
+            android:name=".SearchDetailActivity"
+            android:exported="false"
+            android:label="back to search"
+            android:theme="@style/ShowDetailsTheme"/>
+        <activity
+            android:name=".SearchViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ShowDetailsActivity"
@@ -50,7 +59,7 @@
             android:label="back to home"
             android:theme="@style/ShowDetailsTheme2" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".CartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

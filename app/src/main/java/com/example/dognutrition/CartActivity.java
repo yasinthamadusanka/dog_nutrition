@@ -91,7 +91,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private  void initList(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
         adapter = new CartAdapter(managementCart.getListCart(), this, new ChangeNumberItemListener() {
             @Override
