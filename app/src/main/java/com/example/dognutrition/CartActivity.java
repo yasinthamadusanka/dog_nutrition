@@ -73,7 +73,7 @@ public class CartActivity extends AppCompatActivity {
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(CartActivity.this, EditProfileActivity.class));
             }
         });
 

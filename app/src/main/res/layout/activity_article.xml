@@ -141,7 +141,7 @@
                         android:id="@+id/educationText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Education"
+                        android:text="Articles"
                         android:textAlignment="center"
                         android:textColor="#000000"
                         android:textSize="12sp" />

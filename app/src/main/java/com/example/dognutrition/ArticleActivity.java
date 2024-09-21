@@ -84,7 +84,7 @@ public class ArticleActivity extends AppCompatActivity {
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(ArticleActivity.this, EditProfileActivity.class));
             }
         });
 
