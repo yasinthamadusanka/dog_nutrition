@@ -55,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPopular();
         bottomNavigation();
 
+        imageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
         orderNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

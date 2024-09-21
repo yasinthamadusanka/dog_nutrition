@@ -402,6 +402,7 @@
                             android:ellipsize="none"
                             android:paddingBottom="4dp"
                             android:singleLine="false"
+                            android:paddingStart="42dp"
                             android:text="address"
                             android:textColor="#5b5b5b"
                             android:textSize="14sp" />

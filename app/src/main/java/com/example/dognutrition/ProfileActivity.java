@@ -60,6 +60,14 @@ public class ProfileActivity extends AppCompatActivity {
         textViewChange = findViewById(R.id.textView21);
         imageView2 = findViewById(R.id.imageView9);
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
