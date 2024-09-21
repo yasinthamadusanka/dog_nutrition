@@ -3,12 +3,16 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +38,8 @@ public class ProfileActivity extends AppCompatActivity {
     private Button editProfileButton;
     private ImageView imageView, imageView2;
     private FirebaseAuth firebaseAuth;
+    private Spinner paymentSpinner;
+    private DatabaseReference database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,19 +65,37 @@ public class ProfileActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView5);
         textViewChange = findViewById(R.id.textView21);
         imageView2 = findViewById(R.id.imageView9);
+        paymentSpinner = findViewById(R.id.paymentMethodSpinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.payment_methods, R.layout.spinner_item);
+
+        adapter.setDropDownViewResource(R.layout.spinner_item);
+
+        paymentSpinner.setAdapter(adapter);
+
+        paymentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            private boolean isUserSelection = false;
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                String selectedPaymentMethod = parentView.getItemAtPosition(position).toString();
+
+                if (isUserSelection) {
+                    sendPaymentMethodToRealtimeDB(selectedPaymentMethod);
+                } else {
+                    isUserSelection = true;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+            }
+        });
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        imageView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, PaymentMethodActivity.class);
                 startActivity(intent);
             }
         });
@@ -114,6 +138,41 @@ public class ProfileActivity extends AppCompatActivity {
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         loadProfileImage();
         fetchUserData(userId);
+    }
+
+    private void sendPaymentMethodToRealtimeDB(String paymentMethod) {
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference("users").child(userId);
+
+
+        database.child("paymentMethod").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // Update the existing payment method
+                    database.child("paymentMethod").setValue(paymentMethod).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Log.d("Firebase", "Payment method successfully updated");
+                        } else {
+                            Log.w("Firebase", "Failed to update payment method", task.getException());
+                        }
+                    });
+                } else {
+                    database.child("paymentMethod").setValue(paymentMethod).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Log.d("Firebase", "Payment method successfully created");
+                        } else {
+                            Log.w("Firebase", "Failed to create payment method", task.getException());
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("Firebase", "Error checking payment method: " + databaseError.getMessage());
+            }
+        });
     }
 
     @Override
@@ -166,6 +225,7 @@ public class ProfileActivity extends AppCompatActivity {
                 String email = dataSnapshot.child("email").getValue(String.class);
                 String address = dataSnapshot.child("address").getValue(String.class);
                 String phoneNumber = dataSnapshot.child("phoneNumber").getValue(String.class);
+                String paymentMethod = dataSnapshot.child("paymentMethod").getValue(String.class);
 
                 textViewUsername1.setText(username);
                 textViewUsername2.setText(username);
@@ -173,6 +233,11 @@ public class ProfileActivity extends AppCompatActivity {
                 textViewEmail2.setText(email);
                 textViewAddress.setText(address);
                 textViewPhoneNumber.setText(phoneNumber);
+
+                if (paymentMethod != null) {
+                    int spinnerPosition = ((ArrayAdapter<String>) paymentSpinner.getAdapter()).getPosition(paymentMethod);
+                    paymentSpinner.setSelection(spinnerPosition);
+                }
             }
 
             @Override

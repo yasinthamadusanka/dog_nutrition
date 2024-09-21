@@ -262,6 +262,35 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/selectPaymentText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Payment method"
+                            android:textColor="#cc5500"
+                            android:textSize="18sp" />
+
+                        <Spinner
+                            android:id="@+id/paymentMethodSpinner"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:background="@drawable/payment_background"
+                            android:entries="@array/payment_methods" />
+                    </LinearLayout>
+
+
                     <View
                         android:id="@+id/view5"
                         android:layout_width="match_parent"

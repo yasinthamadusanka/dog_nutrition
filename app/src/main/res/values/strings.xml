@@ -38,4 +38,11 @@
         The most common way to feed dogs is with a standard dog bowl. These bowls come in a variety of sizes and colors and are made with a variety of materials. Standard dog bowls are often the fastest and easiest way to provide dogs with food and water when you’re at home.\n\n<br/><br/>
         As the name implies, these dog bowls are raised off the floor. Many large and giant breed dog owners will purchase elevated dog bowls because they think a dog bending over is uncomfortable. However, some studies have shown that elevated dog bowls can lead to an increased risk of bloat, a serious condition that can be fatal. If your dog has health conditions that you think would benefit from an elevated dog bowl, speak with your dog’s veterinarian about what is best for your dog.
     </string>
+
+    <string-array name="payment_methods">
+        <item>Credit Card</item>
+        <item>Debit Card</item>
+        <item>PayPal</item>
+        <item>Cash</item>
+    </string-array>
 </resources>
