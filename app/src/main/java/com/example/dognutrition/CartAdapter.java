@@ -44,12 +44,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 .load(drawableResourceId)
                 .into(holder.pic);
 
-        // Update plus button listener
         holder.plusItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int currentPosition = holder.getAdapterPosition(); // Dynamically get current position
-                if (currentPosition != RecyclerView.NO_POSITION) { // Check if position is valid
+                int currentPosition = holder.getAdapterPosition();
+                if (currentPosition != RecyclerView.NO_POSITION) {
                     managementCart.plusNumberFood(populars, currentPosition, new ChangeNumberItemListener() {
                         @Override
                         public void changed() {
@@ -61,12 +60,11 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             }
         });
 
-        // Update minus button listener
         holder.minusItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int currentPosition = holder.getAdapterPosition(); // Dynamically get current position
-                if (currentPosition != RecyclerView.NO_POSITION) { // Check if position is valid
+                int currentPosition = holder.getAdapterPosition();
+                if (currentPosition != RecyclerView.NO_POSITION) {
                     managementCart.minusNumberFood(populars, currentPosition, new ChangeNumberItemListener() {
                         @Override
                         public void changed() {

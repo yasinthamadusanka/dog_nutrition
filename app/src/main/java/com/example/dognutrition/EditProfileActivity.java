@@ -95,14 +95,12 @@ public class EditProfileActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String imageUrl = uri.toString();
-                                    // Save this image URL to Firebase Realtime Database under the user's profile
                                     updateProfileImageUrl(imageUrl);
                                 }
                             });
                         }
                     })
                     .addOnFailureListener(e -> {
-                        // Handle the error
                     });
         }
     }
@@ -113,9 +111,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         databaseReference.child("profileImageUrl").setValue(imageUrl).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                // Image URL updated successfully, you can show a toast or navigate back to the profile page
             } else {
-                // Handle failure
             }
         });
     }
@@ -157,13 +153,11 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    // Retrieve existing data
                     String userName = dataSnapshot.child("userName").getValue(String.class);
                     String email = dataSnapshot.child("email").getValue(String.class);
                     String address = dataSnapshot.child("address").getValue(String.class);
                     String phoneNumber = dataSnapshot.child("phoneNumber").getValue(String.class);
 
-                    // Set the data to the EditText fields
                     editTextUserName.setText(userName);
                     editTextEmail.setText(email);
                     editTextAddress.setText(address);
@@ -179,20 +173,17 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private void updateData() {
-        // Get updated values from EditText fields
         String updatedUserName = editTextUserName.getText().toString().trim();
         String updatedEmail = editTextEmail.getText().toString().trim();
         String updatedAddress = editTextAddress.getText().toString().trim();
         String updatedPhoneNumber = editTextPhoneNumber.getText().toString().trim();
 
-        // Create a HashMap to update the values
         Map<String, Object> updates = new HashMap<>();
         updates.put("userName", updatedUserName);
         updates.put("email", updatedEmail);
         updates.put("address", updatedAddress);
         updates.put("phoneNumber", updatedPhoneNumber);
 
-        // Update the data in Firebase
         databaseReference.updateChildren(updates).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

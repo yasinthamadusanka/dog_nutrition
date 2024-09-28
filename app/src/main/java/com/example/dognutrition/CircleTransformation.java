@@ -26,10 +26,8 @@ public class CircleTransformation extends BitmapTransformation {
     private Bitmap getCircleBitmap(BitmapPool pool, Bitmap bitmap) {
         if (bitmap == null) return null;
 
-        // Determine the size of the square to which the image will be scaled
         int size = Math.min(bitmap.getWidth(), bitmap.getHeight());
 
-        // Create a square bitmap with the size of the smaller dimension
         Bitmap result = pool.get(size, size, Bitmap.Config.ARGB_8888);
         if (result == null) {
             result = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
@@ -39,18 +37,14 @@ public class CircleTransformation extends BitmapTransformation {
         Paint paint = new Paint();
         paint.setAntiAlias(true);
 
-        // Create a circle path
         Path path = new Path();
         path.addCircle(size / 2f, size / 2f, size / 2f, Path.Direction.CCW);
 
-        // Clip the canvas to the circle path
         canvas.clipPath(path);
 
-        // Create a bitmap shader to draw the image
         BitmapShader shader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         paint.setShader(shader);
 
-        // Create a rectangle to specify the area of the original bitmap to be drawn
         Rect srcRect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
         RectF dstRect = new RectF(0, 0, size, size);
         canvas.drawBitmap(bitmap, srcRect, dstRect, paint);

@@ -73,7 +73,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Intent to start MyHobbyActivity
                 Intent intent = new Intent(context, SearchViewActivity.class);
 
                 context.startActivity(intent);

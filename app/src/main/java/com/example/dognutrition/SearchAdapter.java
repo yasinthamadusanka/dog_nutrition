@@ -62,7 +62,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         return mList.size();
     }
 
-    // Inner class for ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView logo;
         TextView titleTv, priceTv, descriptionTv;
@@ -82,7 +81,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         }
     }
 
-    // Method to update the list with a filtered one
     public void setFilteredList(ArrayList<Popular> filteredList) {
         this.mList = filteredList;
         notifyDataSetChanged();

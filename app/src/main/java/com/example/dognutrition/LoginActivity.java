@@ -44,10 +44,10 @@ public class LoginActivity extends AppCompatActivity {
         passwordToggle.setOnClickListener(v -> {
             if (password.getInputType() == (android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
                 password.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                passwordToggle.setImageResource(R.drawable.ic_visibility); // Change to 'eye' open icon
+                passwordToggle.setImageResource(R.drawable.ic_visibility);
             } else {
                 password.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                passwordToggle.setImageResource(R.drawable.ic_visibility_off); // Change to 'eye' closed icon
+                passwordToggle.setImageResource(R.drawable.ic_visibility_off);
             }
 
             password.setSelection(password.getText().length());
@@ -62,11 +62,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser() {
-        // Get input values
         String uEmail = email.getText().toString().trim();
         String uPassword = password.getText().toString().trim();
 
-        // Input validation
         if (TextUtils.isEmpty(uEmail) || !Patterns.EMAIL_ADDRESS.matcher(uEmail).matches()) {
             email.setError("Enter a valid email address");
             return;

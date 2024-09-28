@@ -8,7 +8,6 @@ public class UserProfile {
     private String address;
 
     public UserProfile() {
-        // Default constructor required for calls to DataSnapshot.getValue(com.example.dognutrition.UserProfile.class)
     }
 
     public UserProfile(String userName, String email, String phoneNumber, String address) {

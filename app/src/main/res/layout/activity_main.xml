@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
-                    android:text="Hi Yasintha"
+                    android:text="Hi User"
                     android:textColor="#ff4500"
                     android:textSize="20sp"
                     android:textStyle="bold"

@@ -103,15 +103,12 @@ public class ProfileActivity extends AppCompatActivity {
         textViewChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the current user from FirebaseAuth
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                 if (user != null) {
-                    // Get the email address of the current user
                     String email = user.getEmail();
 
                     if (email != null && !email.isEmpty()) {
-                        // Send password reset email
                         FirebaseAuth.getInstance().sendPasswordResetEmail(email)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -149,7 +146,6 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    // Update the existing payment method
                     database.child("paymentMethod").setValue(paymentMethod).addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             Log.d("Firebase", "Payment method successfully updated");
@@ -248,7 +244,6 @@ public class ProfileActivity extends AppCompatActivity {
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Navigate to EditProfileActivity
                 Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
                 startActivity(intent);
             }
