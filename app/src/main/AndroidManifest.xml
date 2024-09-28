@@ -40,9 +40,6 @@
             android:label="back to home"
             android:theme="@style/ShowDetailsTheme" />
         <activity
-            android:name=".PaymentMethodActivity"
-            android:exported="false" />
-        <activity
             android:name=".EditProfileActivity"
             android:exported="false"
             android:label="back to profile"
